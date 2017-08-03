@@ -1,1 +1,9 @@
- <h1>Home Page</h1>
+<section ng-controller="HomeCtrl as home">
+    <div class="navbar">
+        <h1>{{home.tempTitle}}</h1>
+        <h4 ng-repeat="room in home.rooms">
+            Room {{ ($index + 1) }}
+        </h4>
+
+    </div>
+</section>

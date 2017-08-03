@@ -1,0 +1,22 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Arial';
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+}
+
+.navbar {
+    height: 100%;
+    width: 15%;
+    background-color: pink;
+    padding: 3rem;
+    position: fixed;
+    border: 1px solid black;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
