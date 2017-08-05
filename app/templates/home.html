@@ -1,9 +1,6 @@
 <section ng-controller="HomeCtrl as home">
     <div class="navbar">
-        <h1>{{home.tempTitle}}</h1>
-        <h4 ng-repeat="room in home.rooms">
-            Room {{ ($index + 1) }}
-        </h4>
-
+        <h3>Welcome to Bloc Chat!!!</h3>
+        <h4 ng-repeat="room in home.room">{{room.$value}}</h4>
     </div>
 </section>

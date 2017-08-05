@@ -11,8 +11,8 @@ body {
 
 .navbar {
     height: 100%;
-    width: 15%;
-    background-color: pink;
+    width: 20%;
+    background-color: #87cefa;
     padding: 3rem;
     position: fixed;
     border: 1px solid black;
