@@ -13,8 +13,8 @@
                 templateUrl: '/templates/home.html'
             });
     }
-         
+
     angular
-        .module('blocChat', ['ui.router', 'firebase'])
+        .module('blocChat', ['ui.bootstrap', 'ui.router', 'firebase']) //Arranged in descending order by checkpoint
         .config(config);
 })();
