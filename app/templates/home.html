@@ -1,6 +1,17 @@
 <section ng-controller="HomeCtrl as home">
+
+    <!--Make a new chat room-->
+
+    <div class='new room' ng-controller='ModalCtrl as modal'>
+        <!--Straight up copy and paste job from documentation-->
+        <button type="button" class="btn btn-default" ng-click="modal.open()">Make a new damn room</button>
+    </div>
+
+    <!--List chat rooms-->
+
     <div class="navbar">
         <h3>{{home.title}}</h3>
         <h4 ng-repeat="room in home.room">{{room.$value}}</h4>
     </div>
+
 </section>
