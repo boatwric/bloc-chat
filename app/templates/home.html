@@ -8,7 +8,7 @@
 
     <!--List chat rooms-->
 
-    <div class="navbar" ng-controller='ModalCtrl as modal'>
+    <div class="col-md-2 navbar" ng-controller='ModalCtrl as modal'>
         <h3>{{home.title}}</h3>
         <h4 ng-repeat="room in home.room">{{room.$value}}</h4>
         <button type="button" class="btn btn-default" ng-click="modal.open()">Make a new damn room</button>

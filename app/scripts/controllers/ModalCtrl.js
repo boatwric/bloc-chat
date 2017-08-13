@@ -5,7 +5,7 @@
 
         this.open = function() {
             var modalInstance = $uibModal.open({ //copied directly from documentation
-                //animation: $ctrl.animationsEnabled,
+                animation: this.animationsEnabled,
                 templateUrl: 'templates/modal.html',
                 controller: 'ModalInstanceCtrl',
                 controllerAs: 'modal'
