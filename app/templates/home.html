@@ -2,16 +2,16 @@
 
     <!--Make a new chat room-->
 
-    <div class='new room' ng-controller='ModalCtrl as modal'>
-        <!--Straight up copy and paste job from documentation-->
+    <!--div class='new room' ng-controller='ModalCtrl as modal'>
         <button type="button" class="btn btn-default" ng-click="modal.open()">Make a new damn room</button>
-    </div>
+    </div-->
 
     <!--List chat rooms-->
 
-    <div class="navbar">
+    <div class="navbar" ng-controller='ModalCtrl as modal'>
         <h3>{{home.title}}</h3>
         <h4 ng-repeat="room in home.room">{{room.$value}}</h4>
+        <button type="button" class="btn btn-default" ng-click="modal.open()">Make a new damn room</button>
     </div>
 
 </section>
