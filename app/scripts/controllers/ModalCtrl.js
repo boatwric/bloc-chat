@@ -8,9 +8,14 @@
                 animation: this.animationsEnabled,
                 templateUrl: 'templates/modal.html',
                 controller: 'ModalInstanceCtrl',
-                controllerAs: 'modal'
+                controllerAs: 'modalInstance'
             });
         };
+
+        //modalInstance.result.then(function(chatroom) {
+        //this.room = chatroom;
+        //Room.add(this.room);
+        //});
     };
 
     angular

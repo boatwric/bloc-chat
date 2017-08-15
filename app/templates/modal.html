@@ -5,11 +5,17 @@
     </div>
 
     <div class="modal-body">
-        <p>If you can, you're looking at a modal. Good one, brah.</p>
+        <h3>Want your own space? Make it!</h3>
+        <br>
+        <form ng-submit="modalInstance.ok()">
+            <input type="text" name='submission' ng-model='modalInstance.name' placeholder="You have to write something, foo'">
+        </form>
+        <br>
     </div>
 
     <div class="modal-footer">
-        <button class="btn btn-warning" type="button" ng-click="modal.cancel()">Now can you close me?</button>
+        <button class="btn btn-warning" type="button" ng-click="modalInstance.ok()">MAKE IT YOUR OWN!!!</button>
+        <button class="btn btn-warning" type="button" ng-click="modalInstance.cancel()">Now can you close me?</button>
     </div>
 
 </div>
