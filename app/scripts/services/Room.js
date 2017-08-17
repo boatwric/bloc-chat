@@ -8,7 +8,7 @@
 
         console.log("Did you make it outside?") //I did :D
 
-        Room.add = function(room) { //going to give Room an add method, using firebase's built in $add method create it
+        Room.create = function(room) { //going to give Room an add method, using firebase's built in $add method create it
             rooms.$add(room); //firebaseArray already referenced above, just need to call in, use $add service, and specify that it's whatever argument is passed into the function
 
             console.log("Did you make it inside?") //I haven't yet :(

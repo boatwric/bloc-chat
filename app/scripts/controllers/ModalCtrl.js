@@ -12,13 +12,37 @@
             });
         };
 
-        //modalInstance.result.then(function(chatroom) {
-        //this.room = chatroom;
-        //Room.add(this.room);
-        //});
+        /*
+        
+        -Commenting out for now because it breaks all the functionality of home.html
+        
+        modalInstance.result.then(function(room) {
+                this.room = room;
+                console.log(this.room)
+                Room.create(this.room);
+        });
+
+        */
+
+        /*
+                
+        -Structure example from https://stackoverflow.com/questions/42214052/testing-modalinstance-result-then
+
+                modalInstance.result.then(function(data) {
+                //How do I test that the function or branches here
+                 // were run?
+                        if (data.length === 2) {
+                        //do this thing
+                        } else {
+                         // do this other thing
+                        }
+                });
+
+        */
+
     };
 
     angular
         .module('blocChat')
-        .controller('ModalCtrl', ['$uibModal', ModalCtrl])
+        .controller('ModalCtrl', ['$uibModal', 'Room', ModalCtrl])
 })();
