@@ -2,10 +2,12 @@
     function ModalInstanceCtrl($uibModalInstance) {
         this.cancel = function() {
             $uibModalInstance.dismiss('cancel')
+            console.log("Made it inside of this.cancel")
         };
         this.ok = function() {
             $uibModalInstance.close(this.name);
             console.log(this.name);
+            console.log("Made it inside of this.ok")
         };
     }
 
