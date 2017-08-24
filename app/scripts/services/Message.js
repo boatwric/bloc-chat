@@ -10,7 +10,7 @@ Look familiar? Pretty much identical setup to Room.js. $firebaseArray is passed 
         var messages = $firebaseArray(ref);
 
         Message.getByRoomId = function(roomId) {
-            return $firebaseArray(messages.child('roomId').orderByChild('sentAt'));
+            $firebaseArray(ref.orderByChild("roomId").equalTo(roomId));
             console.log("Am I inside?");
         };
 

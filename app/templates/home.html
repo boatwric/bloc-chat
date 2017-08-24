@@ -1,30 +1,48 @@
 <section ng-controller="HomeCtrl as home">
 
-    <!--Make a new chat room-->
-
-    <!--div class='new room' ng-controller='ModalCtrl as modal'>
-        <button type="button" class="btn btn-default" ng-click="modal.open()">Make a new damn room</button>
-    </div-->
-
-    <!--List chat rooms-->
-
-    <div class="col-md-2 navbar" ng-controller='ModalCtrl as modal'>
+    <div class="navbar">
         <h3>{{home.title}}</h3>
-        <h4 ng-repeat="room in home.room">{{room.$value}}</h4>
-        <button type="button" class="btn btn-default" ng-click="modal.open()">Make a new damn room</button>
+
+        <br/>
+
+        <!--List chat rooms-->
+        <h4>Pick a damn room</h4>
+        <h5 ng-repeat="room in home.room">{{room.$value}}</h5>
+
+        <br/>
+
+        <!--Make a new chat room-->
+        <div ng-controller='ModalCtrl as modal'>
+            <button type="button" class="btn btn-default" ng-click="modal.open()">Make your own damn room</button>
+        </div>
+
     </div>
 
-    <div class='container'>
-        <h3>
-            Hi
-        </h3>
+    <div class='msg-container'>
+        <h2>{{ currentRoom.$value }}</h2>
+        <table class="table">
+            <tr class="row">
+                <td class="username">
+                    {{ message.username }}:
+                    <!--Hasn't been defined yet-->
+
+                    <br/> {{ message.content }}
+                    <!--Hasn't been defined yet-->
+                </td>
+                <td class="sentAt">{{ message.sentAt }}</td>
+                <!--Hasn't been defined yet-->
+            </tr>
+
+        </table>
     </div>
 
-    <div class='message'>
-        <form name="message" action="">
-            <input name="usermsg" type="text" id="usermsg" size="63" />
-            <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
-        </form>
+    <div class='msg-send'>
+        <div>
+            <form name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" size="63" />
+                <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            </form>
+        </div>
     </div>
 
 </section>
