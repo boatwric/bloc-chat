@@ -4,20 +4,20 @@ Look familiar? Pretty much identical setup to Room.js. $firebaseArray is passed 
 
 
 (function() {
-        function Message($firebaseArray) {
-            var Message = {};
-            var ref = firebase.database().ref().child("messages");
-            var messages = $firebaseArray(ref);
+    function Message($firebaseArray) {
+        var Message = {};
+        var ref = firebase.database().ref().child("messages");
+        var messages = $firebaseArray(ref);
 
-            Message.getByRoomId = function(roomId) {
-                // Filter the messages by their room ID.
-            };
-
-            return Message;
+        Message.getByRoomId = function(roomId) {
+            return $firebaseArray(messages.child('roomId').orderByChild('sentAt'));
+            console.log("Am I inside?");
         };
-    }
+
+        return Message;
+    };
 
     angular
-    .module('blocChat')
-    .factory('Message', ['$firebaseArray', Message]);
+        .module('blocChat')
+        .factory('Message', ['$firebaseArray', Message]);
 })();
