@@ -6,12 +6,13 @@
         this.currentRoom = null;
         this.messages = null;
 
-        this.whatRoom = function(room) {
+        this.setRoom = function(room) {
             $scope.currentRoom = room;
-            console.log($scope.currentRoom);
-            $scope.messages = Message.getByRoomId($scope.currentRoom.$id);
-            console.log($scope.currentRoom.$id);
+            console.log(room);
+            $scope.messages = Message.getByRoomId(room.$id);
+            console.log(room.$id);
         };
+        return setRoom;
     }
 
     angular

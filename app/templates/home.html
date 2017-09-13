@@ -7,7 +7,7 @@
 
         <!--List chat rooms-->
         <h4>Pick a damn room</h4>
-        <h5 ng-click="home.whatRoom(room)" ng-repeat="room in home.room">{{room.$value}}</h5>
+        <h5 ng-click="home.setRoom(room)" ng-repeat="room in home.room">{{room.$value}}</h5>
 
         <br/>
 
@@ -22,15 +22,17 @@
         <h2>{{ currentRoom.$value }}</h2>
         <table class="table">
             <tr class="row">
-                <td class="username">
-                    {{ message.username }}:
-                    <!--Hasn't been defined yet-->
+                <div ng-repeat="message in home.messages">
+                    <td class="username">
+                        {{ message.username }}:
+                        <!--Hasn't been defined yet-->
 
-                    <br/> {{ message.content }}
+                        <br/> {{ message.content }}
+                        <!--Hasn't been defined yet-->
+                    </td>
+                    <td class="sentAt">{{ message.sentAt }}</td>
                     <!--Hasn't been defined yet-->
-                </td>
-                <td class="sentAt">{{ message.sentAt }}</td>
-                <!--Hasn't been defined yet-->
+                </div>
             </tr>
 
         </table>
