@@ -12,7 +12,6 @@
             $scope.messages = Message.getByRoomId(room.$id);
             console.log(room.$id);
         };
-        return setRoom;
     }
 
     angular

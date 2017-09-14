@@ -21,18 +21,15 @@
     <div class='msg-container'>
         <h2>{{ currentRoom.$value }}</h2>
         <table class="table">
-            <tr class="row">
-                <div ng-repeat="message in home.messages">
-                    <td class="username">
-                        {{ message.username }}:
-                        <!--Hasn't been defined yet-->
-
-                        <br/> {{ message.content }}
-                        <!--Hasn't been defined yet-->
-                    </td>
-                    <td class="sentAt">{{ message.sentAt }}</td>
-                    <!--Hasn't been defined yet-->
-                </div>
+            <tr class="row" ng-repeat="message in messages">
+                <!--Originally had a div inside my table. Fun fact- you can't do that-->
+                <!--can't use $scope in view, it's implied when you call messages though-->
+                <td class="username">
+                    {{ message.username }}:
+                    <br/> {{ message.content }}
+                </td>
+                <td class="sentAt">{{ message.sentAt }}</td>
+                <!--Hasn't been defined yet-->
             </tr>
 
         </table>
