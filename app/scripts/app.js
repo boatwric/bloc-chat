@@ -15,6 +15,6 @@
     }
 
     angular
-        .module('blocChat', ['ui.bootstrap', 'ui.router', 'firebase']) //Arranged in descending order by checkpoint
+        .module('blocChat', ['ui.bootstrap', 'ui.router', 'firebase', 'ngCookies']) //Arranged in descending order by checkpoint
         .config(config);
 })();

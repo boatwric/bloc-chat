@@ -1,0 +1,20 @@
+<div>
+
+    <div class="modal-header">
+        <h2 class="modal-title">NO STRANGERS ALLOWED!!!</h2>
+    </div>
+
+    <div class="modal-body">
+        <h3>Declare yourself!</h3>
+        <br>
+        <form ng-submit="modalInstance.ok()">
+            <input type="text" name='submission' ng-model='modalInstance.name' placeholder="What's your handle?">
+        </form>
+        <br>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="modalInstance.ok()">MAKE IT YOUR OWN!!!</button>
+    </div>
+
+</div>
