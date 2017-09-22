@@ -3,11 +3,24 @@
             var currentUser = $cookies.get('blocChatCurrentUser');
             if (!currentUser || currentUser === '') {
                 $uibModal.open({
-                        // Do something to allow users to set their username
-                    }
-                }
+                        var modalInstance = $uibModal.open({ //copied directly from documentation
+                            animation: this.animationsEnabled,
+                            templateUrl: 'templates/usernameModal.html',
+                            controller: 'ModalInstanceCtrl',
+                            controllerAs: 'modalInstance'
+                        })
 
-                angular
-                    .module('blocChat')
-                    .run(['$cookies', '$uibModal', BlocChatCookies]); //Runs if cookies are present, then opens a modal, loads the logic above
-            })();
+                        modalInstance.result.then(function(username) {
+                            this.username = username;
+                            //And then what???
+                        });
+                    }
+                };
+                return currentUser;
+            };
+
+            angular
+                .module('blocChat')
+                .run(['$cookies', '$uibModal', BlocChatCookies]); //Runs if cookies are present, then opens a modal, loads the logic above
+            .factory('BlocChatCookies', ['$cookies', '$uibModal', BlocChatCookies]); //creating same kind of object over and over, takes in cookies, modal, and itself as dependecies
+        })();
