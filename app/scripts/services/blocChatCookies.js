@@ -12,7 +12,10 @@
 
                         modalInstance.result.then(function(username) {
                             this.username = username;
-                            //And then what???
+                            console.log(this.username);
+                            $cookies.put('blocChatCurrentUser', username); //replace blocChatCurrentUser with username
+                            currentUser = this.username; //username gets passed into currentUser at beginning of function
+                            console.log(currentUser);
                         });
                     }
                 };
