@@ -1,5 +1,5 @@
 (function() {
-    function ModalInstanceCtrl($uibModalInstance, $scope) {
+    function ModalInstanceCtrl($uibModalInstance) {
         this.cancel = function() {
             $uibModalInstance.dismiss('cancel')
         };
@@ -12,7 +12,7 @@
 
     angular
         .module('blocChat')
-        .controller('ModalInstanceCtrl', ['$uibModalInstance', '$scope', ModalInstanceCtrl])
+        .controller('ModalInstanceCtrl', ['$uibModalInstance', ModalInstanceCtrl])
 })()
 
 /*
