@@ -9,5 +9,5 @@
 
     angular
         .module('blocChat')
-        .controller('ModalInstanceCtrl', ['$uibModalInstance', UsernameModalInstanceCtrl])
+        .controller('UsernameModalInstanceCtrl', ['$uibModalInstance', UsernameModalInstanceCtrl])
 })()
