@@ -4,7 +4,7 @@ Look familiar? Pretty much identical setup to Room.js. $firebaseArray is passed 
 
 
 (function() {
-    function Message($firebaseArray, $cookies) {
+    function Message($firebaseArray, $cookies, $filter) {
         var Message = {};
         var ref = firebase.database().ref().child("messages");
         var messages = $firebaseArray(ref);
@@ -20,9 +20,7 @@ Look familiar? Pretty much identical setup to Room.js. $firebaseArray is passed 
             var msg = {
                 username: $cookies.get('blocChatCurrentUser'), //taken from app.js, line 18
                 content: newMessage, //entering content is what gets the whole thing rolling
-                sentAt: {
-                    { date | date: 'medium' }
-                }, //needs new Date, then filtered, taken from Angular DatePipe documentation
+                sentAt: $filter('date')(date, 'medium'), //needs new Date, then filtered, taken from Angular DatePipe documentation
                 roomId: room.$id //taken from HomeCtrl
             };
             messages.$add(msg); //put new message object into $firebaseArray 
@@ -34,5 +32,5 @@ Look familiar? Pretty much identical setup to Room.js. $firebaseArray is passed 
 
     angular
         .module('blocChat')
-        .factory('Message', ['$firebaseArray', '$cookies', Message]);
+        .factory('Message', ['$firebaseArray', '$cookies', '$filter', Message]);
 })();
