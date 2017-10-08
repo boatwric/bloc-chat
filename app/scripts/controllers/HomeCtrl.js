@@ -11,9 +11,7 @@
             console.log(room.$id);
         };
 
-        this.sendMsg = function(msg) {
-            $scope.messages.$add(msg);
-        };
+        this.send = Message.send
     };
 
     angular

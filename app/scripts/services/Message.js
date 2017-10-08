@@ -5,9 +5,9 @@ Look familiar? Pretty much identical setup to Room.js. $firebaseArray is passed 
 
 (function() {
     function Message($firebaseArray, $cookies, $filter) {
-        var Message = {};
-        var ref = firebase.database().ref().child("messages");
-        var messages = $firebaseArray(ref);
+        var Message = {}; //start with empty object
+        var ref = firebase.database().ref().child("messages"); //look at the firebase message database
+        var messages = $firebaseArray(ref); //array that passes in information from the databas 
 
         Message.getByRoomId = function(roomId) {
             console.log($firebaseArray(ref.orderByChild("roomId").equalTo(roomId)));
