@@ -37,9 +37,10 @@
 
     <div class='msg-send'>
         <div>
-            <form name="message" action="">
+            <form name="message" ng-submit="home.send()">
                 <input name="usermsg" type="text" id="usermsg" size="63" required ng-model="home.message" />
-                <input name="submitmsg" type="submit" id="submitmsg" value="Send" ng-submit="home.send" />
+                <input name="submit" type="submit" id="submitmsg" value="Send" />
+            </form>
             </form>
         </div>
     </div>

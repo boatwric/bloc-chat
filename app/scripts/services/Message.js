@@ -16,6 +16,7 @@ Look familiar? Pretty much identical setup to Room.js. $firebaseArray is passed 
         };
 
         Message.send = function(newMessage) {
+            console.log("sending message: ", newMessage);
             var date = new Date(); //need this to filter in sentAt
             var msg = {
                 username: $cookies.get('blocChatCurrentUser'), //taken from app.js, line 18
@@ -24,7 +25,7 @@ Look familiar? Pretty much identical setup to Room.js. $firebaseArray is passed 
                 roomId: room.$id //taken from HomeCtrl
             };
             messages.$add(msg); //put new message object into $firebaseArray 
-            msg = ''; //resets to take in new message once old one is sent off (???)
+            this.message = ''; //resets to take in new message once old one is sent off (???)
         };
 
         return Message;
