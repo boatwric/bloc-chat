@@ -15,16 +15,17 @@ Look familiar? Pretty much identical setup to Room.js. $firebaseArray is passed 
             //now that I have $id, can pass into this method to get associated messages. 
         };
 
-        Message.send = function(newMessage) {
+        Message.send = function(newMessage, room) {
             console.log("sending message: ", newMessage);
             var date = new Date(); //need this to filter in sentAt
             var msg = {
                 username: $cookies.get('blocChatCurrentUser'), //taken from app.js, line 18
                 content: newMessage, //entering content is what gets the whole thing rolling
                 sentAt: $filter('date')(date, 'medium'), //needs new Date, then filtered, taken from Angular DatePipe documentation
-                roomId: room.$id //taken from HomeCtrl
+                roomId: room.$id //taken from argument room
             };
             messages.$add(msg); //put new message object into $firebaseArray 
+            console.log("Sent: ", msg);
             this.message = ''; //resets to take in new message once old one is sent off (???)
         };
 

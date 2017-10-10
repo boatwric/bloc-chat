@@ -12,11 +12,11 @@
             console.log(room.$id);
         };
 
-        this.send = function() {
+        this.send = function(message, room) {
             //TODO: Delete this console.log 
-            console.log("Sending this message: ", this.message);
+            console.log("Sending this message: ", message);
 
-            Message.send(this.message);
+            Message.send(message, room);
             this.message = ' ';
         }
     };
